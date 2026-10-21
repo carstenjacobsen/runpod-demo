@@ -1,6 +1,3 @@
-
-> [!WARNING] **Use at your own risk.** This software is provided "as is," without warranty of any kind. The authors are not responsible for any damage, data loss, or system instability caused by using this repository.
-
 # Runpod Demo
 
 This application can send release note notifications to slack, and create release notes for documentation. GitHub Actions can call the application when a new release is created, and a Slack notification is automatically sent to a Slack channel. This way people in the organization can stay updated on software releases. 
@@ -26,8 +23,8 @@ FastAPI is used to create the two API endpoints `/api/release` and `/api/release
 
 ```text
 runpod-demo/
-├── .env
-├── main.py
+├── .env                //
+├── main.py             // FastAPI app and endpoints 
 ├── github.py
 ├── summarize.py
 ├── slack.py
@@ -89,6 +86,9 @@ This was my first time using Runpod and deploying an application, so I had no pr
 
 The good thing is, there's a lot of information in the documentation. It's just organized more for looking up information rather than educating developers. 
 
+> [!WARNING]
+> **Use at your own risk.** This software is provided "as is," without warranty of any kind. The authors are not responsible for any damage, data loss, or system instability caused by using this repository.
+> 
 _2026, Carsten Jacobsen_
 
 
