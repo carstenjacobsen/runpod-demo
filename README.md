@@ -40,21 +40,22 @@ RUNPOD_MODEL=...
 ```
 
 ```ini
-# Slack (bot needs the chat:write scope and must be invited to the channel)
-SLACK_BOT_TOKEN=xoxb-...      # Must use the Bot User OAuth Token (xoxo-...)
-SLACK_CHANNEL=#runpod         # Choose the channel, the Slack App Bot must be added
-```
-
-
-```ini
 # RunPod network volume via its S3-compatible API (request log)
 RUNPOD_S3_ACCESS_KEY=user_...
 RUNPOD_S3_SECRET_KEY=rps_...
 RUNPOD_S3_ENDPOINT=...
 RUNPOD_S3_REGION=...
 RUNPOD_S3_BUCKET=...
-
 ```
+
+```ini
+# Slack (bot needs the chat:write scope and must be invited to the channel)
+SLACK_BOT_TOKEN=xoxb-...      # Must use the Bot User OAuth Token (xoxb-...)
+SLACK_CHANNEL=#runpod         # Choose the channel, the Slack App Bot must be added
+```
+
+
+
 
 
 ## Runpod Services
