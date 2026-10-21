@@ -7,6 +7,8 @@ flowchart LR
     A[GitHub Release Action] --> B["/api/release"]
     B --> C[GitHub API: Pull Release Text]
     C --> D[Summarize Text]
+    D --> E[Store Release Note]
+    E --> F[**Slack API**: Send Message]
 ```
 
 
