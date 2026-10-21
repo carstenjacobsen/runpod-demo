@@ -1,6 +1,9 @@
 # Runpod Demo
 
-This application can send release note notifications to slack, and create release notes for documentation. GitHub Actions can call the application when a new release is created. The 
+This application can send release note notifications to slack, and create release notes for documentation. GitHub Actions can call the application when a new release is created, and a Slack notification is automatically sent to a Slack channel. This way people in the organization can stay updated on software releases. The application also provides an endpoint that lists release notes, this endpoint can be used for documentation or other purposes. The frontend of this application is a simple web page that shows the release notes. 
+
+
+## Architecture
 
 ```mermaid
 flowchart LR
@@ -12,8 +15,6 @@ flowchart LR
 ```
 
 
-## Architecture
-The application consists of a frontend and a backend. 
 
 
 ## Runpod Services
