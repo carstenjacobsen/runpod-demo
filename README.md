@@ -2,6 +2,15 @@
 
 This application can send release note notifications to slack, and create release notes for documentation. GitHub Actions can call the application when a new release is created. The 
 
+```mermaid
+flowchart TD
+    A[Start] --> B{Is it working?}
+    B -- Yes --> C[Great!]
+    B -- No --> D[Fix the code]
+    D --> B
+```
+
+
 ## Architecture
 The application consists of a frontend and a backend. 
 
