@@ -33,11 +33,29 @@ The application needs
 
 
 ```ini
-#_RunPod serverless vLLM endpoint (summarization)_
+# RunPod serverless vLLM endpoint (summarization)
 RUNPOD_API_KEY=rpa_...
 RUNPOD_ENDPOINT_ID=...
 RUNPOD_MODEL=...
 ```
+
+```ini
+# Slack (bot needs the chat:write scope and must be invited to the channel)
+SLACK_BOT_TOKEN=xoxb-...      # Must use the Bot User OAuth Token (xoxo-...)
+SLACK_CHANNEL=#runpod         # Choose the channel, the Slack App Bot must be added
+```
+
+
+```ini
+# RunPod network volume via its S3-compatible API (request log)
+RUNPOD_S3_ACCESS_KEY=user_3KmqqCNCLhnaGUGvY81rjIIsCd6
+RUNPOD_S3_SECRET_KEY=rps_TNEIWHMIAMK9OO9S5QQL26WKC1IN3HIOKICW11T282hyjr
+RUNPOD_S3_ENDPOINT=https://s3api-us-nc-2.runpod.io
+RUNPOD_S3_REGION=us-nc-2
+RUNPOD_S3_BUCKET=rf2drsfzk2
+
+```
+
 
 ## Runpod Services
 The application is built using three Runpod services: [Serverless](https://docs.runpod.io/serverless/overview), [Pod](https://docs.runpod.io/pods/overview) and [Storage](https://docs.runpod.io/storage/overview).
