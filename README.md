@@ -31,8 +31,9 @@ runpod-demo/
 The application needs 
 
 
-_RunPod serverless vLLM endpoint (summarization)_
+
 ```text
+#_RunPod serverless vLLM endpoint (summarization)_
 RUNPOD_API_KEY=rpa_...
 RUNPOD_ENDPOINT_ID=...
 RUNPOD_MODEL=...
