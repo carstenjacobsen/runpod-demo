@@ -9,7 +9,7 @@ The application also provides an endpoint that lists release notes, this endpoin
 
 ```mermaid
 flowchart LR
-    A[GitHub Release Action] --> B["/api/release"]
+    A[GitHub Actions: Release] --> B["/api/release"]
     B --> C[GitHub API: Pull Release Text]
     C --> D[Summarize Text]
     D --> E[Store Release Note]
