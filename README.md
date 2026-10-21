@@ -11,7 +11,7 @@ The application is built using three Runpod services: [Serverless](https://docs.
 
 * **Serverless**: The application uses an LLM to summarize release notes, and organize the text as bullet points. Using vLLM workers deployed as a Serverless endpoint is a convenient and easily customizable way to use LLM models.
 * **Pod**: The application backend is deployed to a Pod, an affordable and scalable way to host the backend.
-* **Storage**: The release notes could be stored in a database, but for the sake of simplicity, they are stored in a CSV file. 
+* **Storage**: The release notes could be stored in a database, but for the sake of simplicity, they are stored in a CSV file. Using the Storage service it's easy for the backend to write to the file, and to read the file for the frontend endpoint.
 
 
 ## Challenges
