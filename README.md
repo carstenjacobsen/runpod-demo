@@ -8,7 +8,7 @@ flowchart LR
     B --> C[GitHub API: Pull Release Text]
     C --> D[Summarize Text]
     D --> E[Store Release Note]
-    E --> F[**Slack API**: Send Message]
+    D --> F[Slack API: Send Message]
 ```
 
 
