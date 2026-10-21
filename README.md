@@ -1,5 +1,5 @@
-> [!WARNING]
-> **Use at your own risk.** This software is provided "as is," without warranty of any kind. The authors are not responsible for any damage, data loss, or system instability caused by using this repository.
+
+> [!WARNING] **Use at your own risk.** This software is provided "as is," without warranty of any kind. The authors are not responsible for any damage, data loss, or system instability caused by using this repository.
 
 # Runpod Demo
 
