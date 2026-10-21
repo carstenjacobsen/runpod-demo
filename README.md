@@ -48,11 +48,11 @@ SLACK_CHANNEL=#runpod         # Choose the channel, the Slack App Bot must be ad
 
 ```ini
 # RunPod network volume via its S3-compatible API (request log)
-RUNPOD_S3_ACCESS_KEY=user_3KmqqCNCLhnaGUGvY81rjIIsCd6
-RUNPOD_S3_SECRET_KEY=rps_TNEIWHMIAMK9OO9S5QQL26WKC1IN3HIOKICW11T282hyjr
-RUNPOD_S3_ENDPOINT=https://s3api-us-nc-2.runpod.io
-RUNPOD_S3_REGION=us-nc-2
-RUNPOD_S3_BUCKET=rf2drsfzk2
+RUNPOD_S3_ACCESS_KEY=user_...
+RUNPOD_S3_SECRET_KEY=rps_...
+RUNPOD_S3_ENDPOINT=...
+RUNPOD_S3_REGION=...
+RUNPOD_S3_BUCKET=...
 
 ```
 
