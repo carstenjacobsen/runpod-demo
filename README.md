@@ -15,7 +15,7 @@ flowchart LR
     D --> E[Storage: Store Release Note]
     D --> F[Slack API: Send Message]
 ```
-The core functionality is built as a Python application. The `main.py` file defines the two API endpoints `/api/release` and `/api/releases`, and the functionality for fetching release notes from GitHub, summarizing release notes, sending Slack messages etc. are separated out into individual files. 
+The core functionality is built as a Python application. The `main.py` file is the application entry point and defines the two API endpoints `/api/release` and `/api/releases`. The functionality for fetching release notes from GitHub, summarizing release notes, sending Slack messages etc. are separated out into individual files. 
 
 ```text
 runpod-demo/
@@ -27,7 +27,14 @@ runpod-demo/
 ├── requirements.txt.   # Python dependencies
 └── .env                # Template for the `.env` settings file
 ```
+### Environment Variables
+The application needs 
 
+
+_RunPod serverless vLLM endpoint (summarization)_
+RUNPOD_API_KEY=rpa_...
+RUNPOD_ENDPOINT_ID=...
+RUNPOD_MODEL=...
 
 ## Runpod Services
 The application is built using three Runpod services: [Serverless](https://docs.runpod.io/serverless/overview), [Pod](https://docs.runpod.io/pods/overview) and [Storage](https://docs.runpod.io/storage/overview).
