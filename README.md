@@ -11,8 +11,8 @@ The application also provides an endpoint that lists release notes, this endpoin
 flowchart LR
     A[GitHub Actions: Release Trigger] --> B["/api/release"]
     B --> C[GitHub API: Pull Release Text]
-    C --> D[Summarize Text]
-    D --> E[Store Release Note]
+    C --> D[Serverless vLLM: Summarize Text]
+    D --> E[Storage: Store Release Note]
     D --> F[Slack API: Send Message]
 ```
 
