@@ -15,22 +15,17 @@ flowchart LR
     D --> E[Storage: Store Release Note]
     D --> F[Slack API: Send Message]
 ```
-The core functionality is built as a Python application. 
-
-FastAPI is used to create the two API endpoints `/api/release` and `/api/releases`. 
-
-
+The core functionality is built as a Python application. The `main.py` file defines the two API endpoints `/api/release` and `/api/releases`, and the functionality for fetching release notes from GitHub, summarizing release notes, sending Slack messages etc. are separated out into individual files. 
 
 ```text
 runpod-demo/
-├── .env                //
-├── main.py             // FastAPI app and endpoints 
+├── main.py             # FastAPI app and endpoints 
 ├── github.py           # GitHub release notes fetching
-├── summarize.py
-├── slack.py
-├── request_log.py
-├── requirements.txt
-└── README.md
+├── summarize.py.       # RunPod LLM summarization
+├── slack.py            # Slack notification
+├── request_log.py.     # CSV request log on RunPod S3 storage
+├── requirements.txt.   # Python dependencies
+└── .env                # Template for the `.env` settings file
 ```
 
 
