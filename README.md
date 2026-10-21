@@ -1,3 +1,6 @@
+> [!WARNING]
+> **Use at your own risk.** This software is provided "as is," without warranty of any kind. The authors are not responsible for any damage, data loss, or system instability caused by using this repository.
+
 # Runpod Demo
 
 This application can send release note notifications to slack, and create release notes for documentation. GitHub Actions can call the application when a new release is created, and a Slack notification is automatically sent to a Slack channel. This way people in the organization can stay updated on software releases. 
