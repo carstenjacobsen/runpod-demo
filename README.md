@@ -39,7 +39,7 @@ This was my first time using Runpod and deploying an application, so I had no pr
 
 
 
-2026, Carsten Jacobsen
+_2026, Carsten Jacobsen_
 
 
 
