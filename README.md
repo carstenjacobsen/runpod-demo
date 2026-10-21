@@ -6,7 +6,8 @@ This application can send release note notifications to slack, and create releas
 The application consists of a frontend and a backend. 
 
 
-
+## Runpod Services
+The application is built using three Runpod services: [Serverless](https://docs.runpod.io/serverless/overview), Pod and Storage
 
 
 
