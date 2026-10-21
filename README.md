@@ -32,7 +32,7 @@ The application needs
 
 
 
-```text
+```ini
 #_RunPod serverless vLLM endpoint (summarization)_
 RUNPOD_API_KEY=rpa_...
 RUNPOD_ENDPOINT_ID=...
