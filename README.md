@@ -34,10 +34,11 @@ The backend was initially deployed Serverless, but after long struggles to make 
 ### What would I change?
 This was my first time using Runpod and deploying an application, so I had no prior experience to lean on, and experienced Runpod as any other developer deploying their first application. Some of the things that would had made my journey more smooth would be:
 
-1. ssdfdsf
+1. **Tutorials**: Teach developers new to Runpod core concepts and how to deploy their first endpoints, Pods, storage volumes etc. Focus should not only be on how to do it, but also learning how to make the right decisions when you build and deploy on Runpod.
+2. **Guides**: Step-by-step guides that show how to use Runpod for different use cases, and how to build for scale. The guides assume the developer has at least basic knowledge about Runpod (maybe acquired from the tutorials), and now they want to use Runpod for their production application.
 
 
-
+The good thing is, there's a lot of information in the documentation. 
 
 _2026, Carsten Jacobsen_
 
