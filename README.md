@@ -4,10 +4,9 @@ This application can send release note notifications to slack, and create releas
 
 ```mermaid
 flowchart LR
-    A[Start] --> B{Is it working?}
-    B -- Yes --> C[Great!]
-    B -- No --> D[Fix the code]
-    D --> B
+    A[GitHub Release Action] --> B[/api/release]
+    B --> C[GitHub API - Pull Release Text]
+    C --> D[Summarize Text]
 ```
 
 
