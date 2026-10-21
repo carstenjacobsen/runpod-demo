@@ -36,9 +36,9 @@ This was my first time using Runpod and deploying an application, so I had no pr
 
 1. **Tutorials**: Teach developers new to Runpod core concepts and how to deploy their first endpoints, Pods, storage volumes etc. Focus should not only be on how to do it, but also learning how to make the right decisions when you build and deploy on Runpod.
 2. **Guides**: Step-by-step guides that show how to use Runpod for different use cases, and how to build for scale. The guides assume the developer has at least basic knowledge about Runpod (maybe acquired from the tutorials), and now they want to use Runpod for their production application.
+3. **Video Content**: Video walk-through by team members (DevRel, Engineering) using Runpod. Can be from building a simple application and deploying it, to deep-dives in specific features. To follow along when someone experienced use Runpod can be very educational and helpful.
 
-
-The good thing is, there's a lot of information in the documentation. 
+The good thing is, there's a lot of information in the documentation. It's just organized more for looking up information rather than educating developers. 
 
 _2026, Carsten Jacobsen_
 
