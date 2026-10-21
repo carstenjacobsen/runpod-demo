@@ -32,9 +32,11 @@ The application needs
 
 
 _RunPod serverless vLLM endpoint (summarization)_
+```json
 RUNPOD_API_KEY=rpa_...
 RUNPOD_ENDPOINT_ID=...
 RUNPOD_MODEL=...
+```
 
 ## Runpod Services
 The application is built using three Runpod services: [Serverless](https://docs.runpod.io/serverless/overview), [Pod](https://docs.runpod.io/pods/overview) and [Storage](https://docs.runpod.io/storage/overview).
