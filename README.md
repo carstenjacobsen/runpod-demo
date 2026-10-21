@@ -25,7 +25,7 @@ FastAPI is used to create the two API endpoints `/api/release` and `/api/release
 runpod-demo/
 ├── .env                //
 ├── main.py             // FastAPI app and endpoints 
-├── github.py
+├── github.py           # GitHub release notes fetching
 ├── summarize.py
 ├── slack.py
 ├── request_log.py
