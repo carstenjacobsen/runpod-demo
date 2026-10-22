@@ -52,6 +52,7 @@ SLACK_BOT_TOKEN=xoxb-...      # Must use the Bot User OAuth Token (xoxb-...)
 SLACK_CHANNEL=#runpod         # Choose the channel, the Slack App Bot must be added
 ```
 
+When the application is deployed to either Runpod Serverless or Pod, the environment variables are set in the Serverless or Pod settings.
 
 
 
