@@ -67,17 +67,25 @@ When the application is deployed to either Runpod Serverless or Pod, the environ
 
 ## Deployment
 
-### Deploy to a RunPod Pod
+### Deploy the Backend
 
-A Pod is an always-on container, as an alternative to Serverless. It uses the same image (see step 1 above).
+A Pod is an always-on container, as an alternative to Serverless.
 
 1. In the RunPod console, open **Pods -> Deploy** and pick a worker type (the app doesn't use a GPU, so the cheapest option is fine).
 2. Click **Edit Template** and set:
    - **Container image:** `YOUR_DOCKER_USERNAME/release-backend:v1` (add registry credentials in settings if the image is private).
    - **Expose HTTP Ports:** `8100`.
-   - **Environment variables:** `PORT=8100` plus every setting from the Configuration section. Also set `API_KEY` (see below) and `SUMMARIZE_TIMEOUT_SECONDS=90`.
+   - **Environment variables:** `PORT=8100` plus every setting from the Configuration section. Also set (Runpod) `API_KEY` and `SUMMARIZE_TIMEOUT_SECONDS=90`.
    - Leave the container start command empty; the image already runs uvicorn on `$PORT`.
-3. Deploy. The service is then available at `https://POD_ID-8100.proxy.runpod.net`:
+3. Deploy. The service is then available at `https://POD_ID-8100.proxy.runpod.net`.
+
+The deployment can be tested with the `/api/alive`:
+
+```bash
+curl https://POD_ID-8100.proxy.runpod.net/api/alive
+
+{ "success": true }
+```
 
 
 
