@@ -5,6 +5,14 @@ This application can send release note notifications to slack, and create releas
 The application also provides an endpoint that lists release notes, this endpoint can be used for documentation or other purposes. The frontend of this application is a simple web page that shows the release notes. 
 
 
+
+## Runpod Services
+The application is built using three Runpod services: [Serverless](https://docs.runpod.io/serverless/overview), [Pod](https://docs.runpod.io/pods/overview) and [Storage](https://docs.runpod.io/storage/overview).
+
+* **Serverless**: The application uses an LLM to summarize release notes, and organize the text as bullet points. Using vLLM workers deployed as a Serverless endpoint is a convenient and easily customizable way to use LLM models.
+* **Pod**: The application backend is deployed to a Pod, an affordable and scalable way to host the backend.
+* **Storage**: The release notes could be stored in a database, but for the sake of simplicity, they are stored in a CSV file. Using the Storage service it's easy for the backend to write to the file, and to read the file for the frontend endpoint.
+
 ## Architecture
 
 ```mermaid
@@ -56,13 +64,6 @@ When the application is deployed to either Runpod Serverless or Pod, the environ
 
 
 
-
-## Runpod Services
-The application is built using three Runpod services: [Serverless](https://docs.runpod.io/serverless/overview), [Pod](https://docs.runpod.io/pods/overview) and [Storage](https://docs.runpod.io/storage/overview).
-
-* **Serverless**: The application uses an LLM to summarize release notes, and organize the text as bullet points. Using vLLM workers deployed as a Serverless endpoint is a convenient and easily customizable way to use LLM models.
-* **Pod**: The application backend is deployed to a Pod, an affordable and scalable way to host the backend.
-* **Storage**: The release notes could be stored in a database, but for the sake of simplicity, they are stored in a CSV file. Using the Storage service it's easy for the backend to write to the file, and to read the file for the frontend endpoint.
 
 ## Deployment
 
