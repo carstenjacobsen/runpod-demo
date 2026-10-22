@@ -28,9 +28,7 @@ runpod-demo/
 └── .env                # Template for the `.env` settings file
 ```
 ### Environment Variables
-The application needs 
-
-
+The application configuration is stored in the `.env` file, which stores configurations for the Serverless vLLM endpoint, the file storage and the Slack integration.
 
 ```ini
 # RunPod serverless vLLM endpoint (summarization)
@@ -67,6 +65,17 @@ The application is built using three Runpod services: [Serverless](https://docs.
 
 ## Deployment
 
+### Deploy to a RunPod Pod
+
+A Pod is an always-on container, as an alternative to Serverless. It uses the same image (see step 1 above).
+
+1. In the RunPod console, open **Pods -> Deploy** and pick a worker type (the app doesn't use a GPU, so the cheapest option is fine).
+2. Click **Edit Template** and set:
+   - **Container image:** `YOUR_DOCKER_USERNAME/release-backend:v1` (add registry credentials in settings if the image is private).
+   - **Expose HTTP Ports:** `8100`.
+   - **Environment variables:** `PORT=8100` plus every setting from the Configuration section. Also set `API_KEY` (see below) and `SUMMARIZE_TIMEOUT_SECONDS=90`.
+   - Leave the container start command empty; the image already runs uvicorn on `$PORT`.
+3. Deploy. The service is then available at `https://POD_ID-8100.proxy.runpod.net`:
 
 
 
@@ -74,6 +83,15 @@ The application is built using three Runpod services: [Serverless](https://docs.
 
 
 
+
+
+```bash
+curl https://POD_ID-8100.proxy.runpod.net/api/alive
+
+curl -X POST https://POD_ID-8100.proxy.runpod.net/api/release \
+  -H "X-API-Key: $API_KEY" -H "Content-Type: application/json" \
+  -d '{"owner": "runpod", "repo": "containers", "html_url": "https://github.com/runpod/containers/releases/tag/comfyui-v1.4.1"}'
+```
 
 
 
@@ -87,8 +105,8 @@ The application is built using three Runpod services: [Serverless](https://docs.
 ## Challenges
 There are a couple of unresolved issues with the application. 
 
-1. Cloudflare timeout (Pods)
-2. Troubleshooting is hard
+1. Troubleshooting is hard
+2. Cloudflare timeout (Pods)
 3. Hard to find the right model
 
 
