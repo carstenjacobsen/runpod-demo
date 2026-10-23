@@ -4,8 +4,6 @@ This application can send release note notifications to slack, and create releas
 
 The application also provides an endpoint that lists release notes, this endpoint can be used for documentation or other purposes. The frontend of this application is a simple web page that shows the release notes. 
 
-
-
 ## Runpod Services
 The application is built using three Runpod services: [Serverless](https://docs.runpod.io/serverless/overview), [Pod](https://docs.runpod.io/pods/overview) and [Storage](https://docs.runpod.io/storage/overview).
 
@@ -143,18 +141,16 @@ Returns all stored release notes.
 ]
 ```
 
+### `GET /api/alive`
 
+Always returns a `true` when called. The endpoint was added to verify the Pod was running, but not used by the application.
 
-
-
-
-
-
-
-
-
-
-
+**Response**:
+```json
+{
+    "success": "true"
+}
+```
 
 ## Challenges
 There are a couple of unresolved issues with the application. 
@@ -168,9 +164,12 @@ There are a couple of unresolved issues with the application.
 
 
 ## Learnings
-Runpod is well-documented, but as a new developer using Runpod, there are unanswered questions along the way. After some trial-and-error I went back to the documentation, and then parts of it made more sense. 
+Runpod is well-documented, but as a new developer using Runpod, there are unanswered questions along the way. After some trial-and-error I went back to the documentation, and then parts of it made more sense. The backend was initially deployed Serverless, but after long struggles to make it work, the backend was deployed to a Pod instead. That introduced another problem - Cloudflare timeouts. 
 
-The backend was initially deployed Serverless, but after long struggles to make it work, the backend was deployed to a Pod instead. 
+Some of the things I struggled with was:
+* Choosing the right target from the beginning (Serverless vs. Pod)
+* Troubleshooting, the logs don't always lead to a solution
+* 
 
 
 ### What would I change?
