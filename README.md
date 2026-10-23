@@ -126,31 +126,26 @@ Fetches a new release from a GitHub repo, summarizes it, stores it and sends a S
 }
 ```
 
+### `GET /api/releases`
 
+Returns all stored release notes.
 
-
-
-**Paid request** — returns `200 OK` with a fact:
-
+**Response**:
 ```json
-{
-  "fact": {
-    "headline": "The script hit the circular file",
-    "description": "The movie \"Back to the Future\" was rejected by every major studio, and the script was thrown in the trash. 44 times was the script rejected, until it finally got accepted by Universal Pictures..."
-  }
-}
+[
+    {
+        "date":"2026-10-22T03:40:27+00:00",
+        "owner":"runpod",
+        "repo":"containers",
+        "summary":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultricies ut quam nec efficitur ..."
+    }
+    ...
+]
 ```
 
 
 
 
-```bash
-curl https://POD_ID-8100.proxy.runpod.net/api/alive
-
-curl -X POST https://POD_ID-8100.proxy.runpod.net/api/release \
-  -H "X-API-Key: $API_KEY" -H "Content-Type: application/json" \
-  -d '{"owner": "runpod", "repo": "containers", "html_url": "https://github.com/runpod/containers/releases/tag/comfyui-v1.4.1"}'
-```
 
 
 
