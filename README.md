@@ -152,28 +152,17 @@ Always returns a `true` when called. The endpoint was added to verify the Pod wa
 }
 ```
 
-## Challenges
-There are a couple of unresolved issues with the application. 
-
-1. Troubleshooting is hard
-2. Cloudflare timeout (Pods)
-3. Hard to find the right model
-
-
-
-
-
 ## Learnings
 Runpod is well-documented, but as a new developer using Runpod, there are unanswered questions along the way. After some trial-and-error I went back to the documentation, and then parts of it made more sense. The backend was initially deployed Serverless, but after long struggles to make it work, the backend was deployed to a Pod instead. That introduced another problem - Cloudflare timeouts. 
 
+### My struggles
 Some of the things I struggled with was:
 * Choosing the right target from the beginning (Serverless vs. Pod)
 * Troubleshooting, the logs don't always lead to a solution
-* 
-
+* Picking the right LLM, some have +20 minute long queues 
 
 ### What would I change?
-This was my first time using Runpod and deploying an application, so I had no prior experience to lean on, and experienced Runpod as any other developer deploying their first application. Some of the things that would had made my journey more smooth would be:
+Some of the things that would had made my journey more smooth would be:
 
 1. **Tutorials**: Teach developers new to Runpod core concepts and how to deploy their first endpoints, Pods, storage volumes etc. Focus should not only be on how to do it, but also learning how to make the right decisions when you build and deploy on Runpod.
 2. **Guides**: Step-by-step guides that show how to use Runpod for different use cases, and how to build for scale. The guides assume the developer has at least basic knowledge about Runpod (maybe acquired from the tutorials), and now they want to use Runpod for their production application.
