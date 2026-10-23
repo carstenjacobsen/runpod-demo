@@ -4,6 +4,9 @@ This application can send release note notifications to slack, and create releas
 
 The application also provides an endpoint that lists release notes, this endpoint can be used for documentation or other purposes. The frontend of this application is a simple web page that shows the release notes. 
 
+> [!WARNING]
+> **Use at your own risk.** This software is provided "as is," without warranty of any kind. The authors are not responsible for any damage, data loss, or system instability caused by using this repository.
+
 ## Runpod Services
 The application is built using three Runpod services: [Serverless](https://docs.runpod.io/serverless/overview), [Pod](https://docs.runpod.io/pods/overview) and [Storage](https://docs.runpod.io/storage/overview).
 
@@ -169,9 +172,7 @@ Some of the things that would had made my journey more smooth would be:
 
 The good thing is, there's a lot of information in the documentation. It's just organized more for looking up information rather than educating developers. 
 
-> [!WARNING]
-> **Use at your own risk.** This software is provided "as is," without warranty of any kind. The authors are not responsible for any damage, data loss, or system instability caused by using this repository.
-> 
+
 _2026, Carsten Jacobsen_
 
 
