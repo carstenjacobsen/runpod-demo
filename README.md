@@ -55,6 +55,11 @@ RUNPOD_S3_BUCKET=...
 ```
 
 ```ini
+# Optional: browser origins allowed to call GET /api/releases (comma-separated, no trailing slash).
+CORS_ORIGINS=https://POD_ID-80.proxy.runpod.net
+```
+
+```ini
 # Slack (bot needs the chat:write scope and must be invited to the channel)
 SLACK_BOT_TOKEN=xoxb-...      # Must use the Bot User OAuth Token (xoxb-...)
 SLACK_CHANNEL=#runpod         # Choose the channel, the Slack App Bot must be added
@@ -99,6 +104,19 @@ curl https://POD_ID-8100.proxy.runpod.net/api/alive
 
 { "success": true }
 ```
+
+### Deploy the Backend
+
+The frontend is deployed in a Runpod Pod 
+
+1. In the RunPod console, open **Pods -> Deploy** and pick a worker type (the app doesn't use a GPU, so the cheapest option is fine).
+2. Click **Edit Template** and set:
+   - **Container image:** `YOUR_DOCKER_USERNAME/release-backend:v1` (add registry credentials in settings if the image is private).
+   - **Expose HTTP Ports:** `8100`.
+   - **Environment variables:** `PORT=8100` plus every setting from the Architecture section. Also set (Runpod) `API_KEY` and `SUMMARIZE_TIMEOUT_SECONDS=100`.
+   - Leave the container start command empty; the image already runs uvicorn on `$PORT`.
+3. Deploy. The service is then available at `https://POD_ID-8100.proxy.runpod.net`.
+
 
 
 ## Usage
