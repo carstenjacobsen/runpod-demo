@@ -71,7 +71,7 @@ When the application is deployed to either Runpod Serverless or Pod, the environ
 
 
 ## Deployment
-
+The frontend, backend and LLM are deployed on Runpod. The frontend and backend are both deployed in Pods and the LLM is deployed as a Serverless endpoint. 
 
 ### Deploy vLLM
 The application summarizes the release notes fetched from GitHub using an LLM. The LLM is deployed as a Serverless endpoint, using vLLM.
@@ -83,10 +83,7 @@ The application summarizes the release notes fetched from GitHub using an LLM. T
 
 Click the new vLLM endpoint and get the **Endpoint ID** and **Model** for the environment variables. 
 
-
-
 ### Deploy the Backend
-
 The backend is deployed in a Runpod Pod 
 
 1. In the RunPod console, open **Pods -> Deploy** and pick a worker type (the app doesn't use a GPU, so the cheapest option is fine).
@@ -98,7 +95,6 @@ The backend is deployed in a Runpod Pod
 3. Deploy. The service is then available at `https://POD_ID-80.proxy.runpod.net`.
 
 ### Deploy the Frontend
-
 The frontend is deployed in a Runpod Pod 
 
 1. In the RunPod console, open **Pods -> Deploy** and pick a worker type (the app doesn't use a GPU, so the cheapest option is fine).
