@@ -67,6 +67,19 @@ When the application is deployed to either Runpod Serverless or Pod, the environ
 
 ## Deployment
 
+
+### Deploy vLLM
+The application summarizes the release notes fetched from GitHub using an LLM. The LLM is deployed as a Serverless endpoint, using vLLM.
+
+1. In the RunPod console, open **Serverless -> New endpoint**
+2. Choose **Deploy LLM API** and then pick an LLM and click **Deploy with vLLM**
+3. Click **Next** (no advanced settings are necessary)
+4. Select GPU configuration and click **Create Endpoint**
+
+Click the new vLLM endpoint and get the **Endpoint ID** and **Model** for the environment variables. 
+
+
+
 ### Deploy the Backend
 
 The backend is deployed in a Runpod Pod 
@@ -86,9 +99,6 @@ curl https://POD_ID-8100.proxy.runpod.net/api/alive
 
 { "success": true }
 ```
-
-### Deploy vLLM
-The application summarizes the release notes fetched from GitHub using an LLM. The LLM is deployed as a Serverless endpoint, using vLLM.
 
 
 ## Usage
