@@ -67,9 +67,6 @@ SLACK_CHANNEL=#runpod         # Choose the channel, the Slack App Bot must be ad
 
 When the application is deployed to either Runpod Serverless or Pod, the environment variables are set in the Serverless or Pod settings.
 
-
-
-
 ## Deployment
 The frontend, backend and LLM are deployed on Runpod. The frontend and backend are both deployed in Pods and the LLM is deployed as a Serverless endpoint. 
 
@@ -105,10 +102,44 @@ The frontend is deployed in a Runpod Pod
    - Leave the container start command empty; the image already runs uvicorn on `$PORT`.
 3. Deploy. The service is then available at `https://POD_ID-80.proxy.runpod.net`.
 
-
-
 ## Usage
+The backend has three API endpoints. One for fetching a new release, one for returning all stored releases and an "alive" endpoint to check if the service is running. 
 
+### `POST /api/release`
+
+Fetches a new release from a GitHub repo, summarizes it, stores it and sends a Slack notification.
+
+**Request Body**:
+```json
+{
+    "owner": "runpod",
+    "repo": "containers",
+    "html_url": "https://github.com/punpod/containers/releases/latest"
+}
+```
+
+**Response**:
+```json
+{
+    "status": "success",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultricies ut quam nec efficitur ..."
+}
+```
+
+
+
+
+
+**Paid request** — returns `200 OK` with a fact:
+
+```json
+{
+  "fact": {
+    "headline": "The script hit the circular file",
+    "description": "The movie \"Back to the Future\" was rejected by every major studio, and the script was thrown in the trash. 44 times was the script rejected, until it finally got accepted by Universal Pictures..."
+  }
+}
+```
 
 
 
