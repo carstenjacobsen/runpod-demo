@@ -97,14 +97,6 @@ The backend is deployed in a Runpod Pod
    - Leave the container start command empty; the image already runs uvicorn on `$PORT`.
 3. Deploy. The service is then available at `https://POD_ID-80.proxy.runpod.net`.
 
-The deployment can be tested with the `/api/alive`:
-
-```bash
-curl https://POD_ID-80.proxy.runpod.net/api/alive
-
-{ "success": true }
-```
-
 ### Deploy the Frontend
 
 The frontend is deployed in a Runpod Pod 
