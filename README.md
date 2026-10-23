@@ -90,32 +90,32 @@ Click the new vLLM endpoint and get the **Endpoint ID** and **Model** for the en
 The backend is deployed in a Runpod Pod 
 
 1. In the RunPod console, open **Pods -> Deploy** and pick a worker type (the app doesn't use a GPU, so the cheapest option is fine).
-2. Click **Edit Template** and set:
+2. Click **Edit Pod** and set:
    - **Container image:** `YOUR_DOCKER_USERNAME/release-backend:v1` (add registry credentials in settings if the image is private).
-   - **Expose HTTP Ports:** `8100`.
-   - **Environment variables:** `PORT=8100` plus every setting from the Architecture section. Also set (Runpod) `API_KEY` and `SUMMARIZE_TIMEOUT_SECONDS=100`.
+   - **Expose HTTP Ports:** `80`.
+   - **Environment variables:** `PORT=80` plus every setting from the Architecture section. Also set (Runpod) `API_KEY` and `SUMMARIZE_TIMEOUT_SECONDS=100`.
    - Leave the container start command empty; the image already runs uvicorn on `$PORT`.
-3. Deploy. The service is then available at `https://POD_ID-8100.proxy.runpod.net`.
+3. Deploy. The service is then available at `https://POD_ID-80.proxy.runpod.net`.
 
 The deployment can be tested with the `/api/alive`:
 
 ```bash
-curl https://POD_ID-8100.proxy.runpod.net/api/alive
+curl https://POD_ID-80.proxy.runpod.net/api/alive
 
 { "success": true }
 ```
 
-### Deploy the Backend
+### Deploy the Frontend
 
 The frontend is deployed in a Runpod Pod 
 
 1. In the RunPod console, open **Pods -> Deploy** and pick a worker type (the app doesn't use a GPU, so the cheapest option is fine).
-2. Click **Edit Template** and set:
-   - **Container image:** `YOUR_DOCKER_USERNAME/release-backend:v1` (add registry credentials in settings if the image is private).
-   - **Expose HTTP Ports:** `8100`.
-   - **Environment variables:** `PORT=8100` plus every setting from the Architecture section. Also set (Runpod) `API_KEY` and `SUMMARIZE_TIMEOUT_SECONDS=100`.
+2. Click **Edit Pod** and set:
+   - **Container image:** `YOUR_DOCKER_USERNAME/release-frontend:v1` (add registry credentials in settings if the image is private).
+   - **Expose HTTP Ports:** `80`.
+   - **Environment variables:** `PORT=8100` and `API_URL=https://POD_ID-80.proxy.runpod.net/api/releases`. Also set (Runpod) `API_KEY`.
    - Leave the container start command empty; the image already runs uvicorn on `$PORT`.
-3. Deploy. The service is then available at `https://POD_ID-8100.proxy.runpod.net`.
+3. Deploy. The service is then available at `https://POD_ID-80.proxy.runpod.net`.
 
 
 
