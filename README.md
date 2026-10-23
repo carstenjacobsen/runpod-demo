@@ -137,7 +137,6 @@ Returns all stored release notes.
         "repo":"containers",
         "summary":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultricies ut quam nec efficitur ..."
     }
-    ...
 ]
 ```
 
